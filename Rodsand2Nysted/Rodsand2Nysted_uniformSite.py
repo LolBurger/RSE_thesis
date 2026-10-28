@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from pathlib import Path
+script_dir = Path(__file__).resolve().parent
 
 from py_wake.deficit_models.noj import NOJ
 from py_wake.site import UniformSite
@@ -61,6 +63,7 @@ plt.ylabel("y [m]")
 plt.title(f"Rødsand II + Nysted, wind from {wind_direction:g}°, "f"{wind_speed:g} m/s, NOJ, k = {k:g}")
 plt.tight_layout()
 plt.legend()
+plt.savefig(script_dir / "Rødsand II and Nysted uniform site.png", dpi=300)
 
 ## Effect of Rødsand II on Nysted
 # Simulate Nysted without Rødsand II
@@ -90,6 +93,7 @@ for i in range(2):
 
 fig.colorbar(points, ax=axes, label="Velocità efficace al rotore [m/s]", shrink=0.8)
 fig.suptitle(f"Vento da {wind_direction:g}°, {wind_speed:g} m/s, NOJ, k = {k:g}")
+plt.savefig(script_dir / "Effect of Rødsand II on Nysted.png", dpi=300)
 
 # Compare the power of the same wind farm in both configurations [MW]
 power_ny_only = result_ny_only.Power.sum().item() / 1e6
