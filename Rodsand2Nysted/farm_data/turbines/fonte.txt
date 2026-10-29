@@ -1,0 +1,5 @@
+swt2p3_93.py (Rødsand II)
+https://gitlab.windenergy.dtu.dk/TOPFARM/pywake_ellipsys_examples/-/blob/master/py_wake_ellipsys_examples/data/turbines/swt2p3_93.py?ref_type=heads
+
+bonus2p3.py (Nysted)
+https://gitlab.windenergy.dtu.dk/TOPFARM/pywake_ellipsys_examples/-/blob/master/py_wake_ellipsys_examples/data/turbines/bonus2p3.py?ref_type=heads

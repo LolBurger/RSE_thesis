@@ -1,16 +1,15 @@
 import numpy as np
 
 from py_wake.wind_turbines import WindTurbines
-from py_wake.examples.data.hornsrev1 import Hornsrev1Site
 from farm_data.Roedsand2Nysted_site import Roedsand2NystedSite
 from py_wake.deficit_models.noj import NOJ
 from py_wake.superposition_models import SquaredSum
 
-from farm_data.Nysted_turbine import bonus_2p3
-from farm_data.Roedsand2_turbine import swt_2p3_93
+from farm_data.turbines.Nysted_turbine import bonus_2p3
+from farm_data.turbines.Roedsand2_turbine import swt_2p3_93
 
-from farm_data.nysted import wt_x as ny_wt_x, wt_y as ny_wt_y
-from farm_data.roedsand2 import wt_x as ro_wt_x, wt_y as ro_wt_y
+from farm_data.geometria.nysted import wt_x as ny_wt_x, wt_y as ny_wt_y
+from farm_data.geometria.roedsand2 import wt_x as ro_wt_x, wt_y as ro_wt_y
 
 ny_x = np.asarray(ny_wt_x, dtype=float)
 ny_y = np.asarray(ny_wt_y, dtype=float)
@@ -28,8 +27,7 @@ type_array = np.concatenate([
 ])
 
 turbines = WindTurbines.from_WindTurbine_lst([swt_2p3_93, bonus_2p3])
-#site = Hornsrev1Site()
-site = Roedsand2NystedSite
+site = Roedsand2NystedSite()
 noj = NOJ(site,turbines,k=0.04,superpositionModel=SquaredSum())
 
 # Simulazione del cluster completo

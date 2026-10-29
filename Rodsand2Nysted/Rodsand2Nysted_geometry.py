@@ -2,8 +2,8 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-from farm_data.nysted import wt_x as ny_wt_x, wt_y as ny_wt_y
-from farm_data.roedsand2 import wt_x as ro_wt_x, wt_y as ro_wt_y
+from farm_data.geometria.nysted import wt_x as ny_wt_x, wt_y as ny_wt_y
+from farm_data.geometria.roedsand2 import wt_x as ro_wt_x, wt_y as ro_wt_y
 
 
 script_dir = Path(__file__).resolve().parent
