@@ -1,0 +1,25 @@
+id,id_RSE,WTG_number,power_MW,status,type,source,area
+6,106,38,570.000000000000000,permitting (EIA ongoing),floating,elaborazione RSE su dati MASE - RSE processing on MASE data,102.930
+8,108,50,750.000000000000000,permitting (EIA ongoing),floating,elaborazione RSE su dati MASE - RSE processing on MASE data,160.177
+9,109,39,702.000000000000000,permitting (EIA ongoing),floating,elaborazione RSE su dati MASE - RSE processing on MASE data,124.556
+10,110,39,702.000000000000000,permitting (EIA ongoing),floating,elaborazione RSE su dati MASE - RSE processing on MASE data,201.738
+11,111,38,684.000000000000000,permitting (EIA ongoing),floating,elaborazione RSE su dati MASE - RSE processing on MASE data,155.325
+12,112,39,702.000000000000000,permitting (EIA ongoing),floating,elaborazione RSE su dati MASE - RSE processing on MASE data,124.266
+15,115,34,504.000000000000000,permitting (EIA ongoing),floating,elaborazione RSE su dati MASE - RSE processing on MASE data,53.598
+17,118,53,795.000000000000000,permitting (EIA ongoing),floating,elaborazione RSE su dati MASE - RSE processing on MASE data,172.226
+18,19,32,384.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,119.751
+19,21,21,252.000000000000000,permitting (EIA completed),floating,elaborazione RSE su dati MASE - RSE processing on MASE data,38.376
+23,26,40,600.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,131.172
+24,27,40,600.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,65.659
+31,35,68,1020.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,318.009
+35,41,54,800.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,94.271
+36,42,48,1200.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,236.307
+54,67,74,1110.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,224.295
+58,71,54,810.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,114.870
+63,77,65,975.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,179.055
+65,79,33,495.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,63.343
+68,82,63,945.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,361.463
+79,96,44,660.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,83.483
+83,40,56,840.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,380.006
+85,84,42,798.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,193.778
+88,116,56,670.000000000000000,preliminary study,floating,elaborazione RSE su dati MASE - RSE processing on MASE data,167.743

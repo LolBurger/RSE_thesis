@@ -1,0 +1,26 @@
+﻿id_RSE;nome_parco;proponente;num_ag_coord;righe_WTG_contate;WTG_number_polygon;pot_tot_mv_coord;power_MW_polygon;note_identificazione
+19;;Apollo Wind Srl;32;32;32;384;384;Nessuna denominazione esplicita nei testi
+21;;7SEAS med Srl;21;21;21;252;252;Nessuna denominazione esplicita nei testi
+26;Calypso;Calypso Wind Srl;40;40;40;600;600;
+27;Ostro;Ow Italy Srl;40;40;40;600;600;
+35;ELYMO;Elymo Srl;68;68;68;1020;1020;
+40;Trinacria;Ow Italy Srl;56;0;56;840;840;Nessuna riga WTG
+41;Parco eolico offshore Pozzallo;NP Pozzallo Wind Srl;54;54;54;800;800;
+42;Sicily South;Avenhexicon Srl;48;24;48;1200;1200;
+67;Mazara del Vallo Offshore Wind Project;Mazar Wind Srl;74;74;74;1110;1110;
+71;Mazara del Vallo 3;Regolo Rinnovabili Srl;54;54;54;810;810;
+77;;;;0;65;;975;"ID assente nella tabella coord; Nessuna riga WTG"
+79;Sicilia 495MW;Inergia SpA;33;33;33;495;495;
+82;Ragusa;Ninfea Rinnovabili Srl;63;63;63;945;945;
+84;Seawind Mazara;Fred Olsen Renewables Italy Srl;42;0;42;798;798;Nessuna riga WTG
+96;Euribia;3 Green Srl;44;44;44;660;660;
+106;Eureka Wind;EUREKA WIND Srl;38;38;38;570;570;
+108;Scicli;Ninfea Rinnovabili Srl;50;50;50;750;750;"opera: Scicli; progetto: Sicili"
+109;Med Wind Scirocco;Med Wind Scirocco Srl;39;39;39;702;702;
+110;Med Wind Maestrale;Med Wind Maestrale Srl;39;39;39;702;702;
+111;Med Wind Grecale;Med Wind Grecale Srl;39;39;38;702;684;
+112;Med Wind Tramontana;Med Wind Tramontana Srl;39;39;39;702;702;
+115;Mazara del Vallo 1;Regolo Rinnovabili Srl;36;36;34;504;504;
+116;Parco eolico offshore Pozzallo / ELFIDA;3 Green Srl;45;0;56;670;670;"opera: Parco eolico offshore Pozzallo; progetto: ELFIDA; Nessuna riga WTG"
+118;Mazara del Vallo 2;Ninfea Rinnovabili Srl;53;53;53;795;795;
+123;Bluwind Pozzallo;Wind Energy Pozzallo Srl;54;54;;972;;Poligono assente
