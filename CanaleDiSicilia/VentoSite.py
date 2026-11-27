@@ -147,13 +147,28 @@ def disegna_rosa_site(site, vento, settori, id_parco, save = False, show = True)
     ax.legend(title="Velocità", loc="upper left", bbox_to_anchor=(1.15, 1))
     ax.set_title(f"Rosa dei venti parco {id_parco}")
     if save:
-        plt.savefig(Path_dir / "Output_vento" / f"rosa_venti_parco_{id_parco}.png", dpi=200, bbox_inches="tight")
-        print(f"Figura salvata: {Path_dir / "Output_vento" / f"rosa_venti_parco_{id_parco}.png"}")
+        plt.savefig(Path_dir / "Output_vento" / "rose_venti" / f"rosa_venti_parco_{id_parco}.png", dpi=200, bbox_inches="tight")
+        print(f"Figura salvata: {Path_dir / "rose_venti" / "Output_vento" / f"rosa_venti_parco_{id_parco}.png"}")
     if show:
         plt.show()
     plt.close()
 
-def disegna_weibull(vento, settori, id_parco, save = False, show = True):
+def ricostruisci_settori(site, vento):
+    ds = site.ds.sel(wd=site.ds.wd < 360)
+    n_settori = ds.sizes["wd"]
+    conteggi = (vento["settore"] .value_counts() .reindex(range(n_settori), fill_value=0))
+
+    return pd.DataFrame({
+        "settore": np.arange(n_settori),
+        "wd_deg": ds["wd"].values,
+        "n_ore": conteggi.to_numpy(),
+        "p_wd": ds["Sector_frequency"].values,
+        "A_ms": ds["Weibull_A"].values,
+        "k": ds["Weibull_k"].values
+    })
+
+def disegna_weibull_settoriale(vento, site, id_parco, save = False, show = True):
+    settori = ricostruisci_settori(site, vento)
     fig, assi = plt.subplots(4, 3, figsize=(14, 12), sharex=True, sharey=True)
     assi = assi.flatten()
 
@@ -180,8 +195,45 @@ def disegna_weibull(vento, settori, id_parco, save = False, show = True):
     fig.suptitle(f"Dati osservati e Weibull — parco {id_parco}")
     fig.tight_layout(rect=[0, 0, 1, 0.96])
     if save:
-        fig.savefig(Path_dir / "Output_vento" / f"weibull_settori_{id_parco}.png", dpi=200, bbox_inches="tight")
-        print(f"Figura salvata: {Path_dir / "Output_vento" / f"weibull_settori_{id_parco}.png"}")
+        fig.savefig(Path_dir / "Output_vento" / "weibull_settori" / f"weibull_settori_{id_parco}.png", dpi=200, bbox_inches="tight")
+        print(f"Figura salvata: {Path_dir / "Output_vento" / "weibull_settori" / f"weibull_settori_{id_parco}.png"}")
     if show:
         plt.show()
     plt.close(fig)
+
+def disegna_weibull_totale(vento, id_parco, save=False, show=True, ax=None):
+    figura_propria = ax is None
+
+    if figura_propria:
+        fig, ax = plt.subplots(figsize=(9, 6))
+    else:
+        fig = ax.figure
+
+    velocita = vento["ws"].dropna()
+    A, k = MetodoMinimiQuadrati_weibull(velocita)
+
+    massimo = int(np.ceil(velocita.max()))
+    classi = np.arange(0, massimo + 0.5, 0.5)
+    x = np.linspace(0.001, massimo, 500)
+
+    if figura_propria:
+        ax.hist(velocita, bins=classi, density=True, color="skyblue", edgecolor="white", label="Dati osservati")
+        ax.plot(x, weibull_min.pdf(x, k, scale=A), color="red", label="Weibull")
+        ax.set_title(f"Tutte le direzioni — parco {id_parco} — " f"{len(velocita)} ore\n" f"A = {A:.2f} m/s; k = {k:.2f}")
+    else:
+        ax.plot(x, weibull_min.pdf(x, k, scale=A))
+
+    ax.set_xlabel("Velocità [m/s]")
+    ax.set_ylabel("Densità")
+    ax.grid(alpha=0.3)
+
+    if figura_propria:
+        ax.legend()
+        fig.tight_layout()
+        if save:
+            fig.savefig(Path_dir / "Output_vento" / "weibul_totali" / f"weibull_totale_{id_parco}.png", dpi=200, bbox_inches="tight")
+            print(f"Figura salvata: {Path_dir / "Output_vento" / "weibul_totali" / f"weibull_totale_{id_parco}.png"}")
+        if show:
+            plt.show()
+        plt.close(fig)
+
